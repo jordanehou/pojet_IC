@@ -3,6 +3,7 @@ from tkinter import messagebox
 
 # Classe représentant l'état des feux de circulation
 # test
+# test2
 class FeuxCirculation:
     def __init__(self, zone_dessin):
         self.zone_dessin = zone_dessin
