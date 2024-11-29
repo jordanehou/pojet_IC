@@ -1,7 +1,7 @@
 from petri_net import (
     transitions, zone_securisee, rouge_ns, vert_ns, jaune_ns,
-    rouge_ew, vert_ew, jaune_ew, trafic_intense, accident_detecte_ns,
-    accident_detecte_ew, compteur_trafic_ns, compteur_trafic_ew
+    rouge_oe, vert_oe, jaune_oe, trafic_intense, accident_detecte_ns,
+    accident_detecte_oe, compteur_trafic_ns, compteur_trafic_oe
 )
 
 def reinitialiser_jetons():
@@ -10,14 +10,14 @@ def reinitialiser_jetons():
     rouge_ns.jetons = 1
     vert_ns.jetons = 0
     jaune_ns.jetons = 0
-    rouge_ew.jetons = 1
-    vert_ew.jetons = 0
-    jaune_ew.jetons = 0
+    rouge_oe.jetons = 1
+    vert_oe.jetons = 0
+    jaune_oe.jetons = 0
     trafic_intense.jetons = 0
     accident_detecte_ns.jetons = 0
-    accident_detecte_ew.jetons = 0
+    accident_detecte_oe.jetons = 0
     compteur_trafic_ns[0] = 0
-    compteur_trafic_ew[0] = 0
+    compteur_trafic_oe[0] = 0
 
 def remise_a_1():
     if(rouge_ns.jetons > 1):
@@ -34,10 +34,10 @@ def simuler_reseau_petri(etapes):
         else:
             compteur_trafic_ns[0] = 0
 
-        if vert_ew.jetons > 0:
-            compteur_trafic_ew[0] += 1
+        if vert_oe.jetons > 0:
+            compteur_trafic_oe[0] += 1
         else:
-            compteur_trafic_ew[0] = 0
+            compteur_trafic_oe[0] = 0
 
         for transition in transitions:
             if transition.est_active():
@@ -49,10 +49,10 @@ def simuler_reseau_petri(etapes):
         remise_a_1()
         # Afficher l'état actuel des places
         print(f"  {rouge_ns}\n  {vert_ns}\n  {jaune_ns}")
-        print(f"  {rouge_ew}\n  {vert_ew}\n  {jaune_ew}")
+        print(f"  {rouge_oe}\n  {vert_oe}\n  {jaune_oe}")
         print(f"  Trafic intense : {trafic_intense.jetons}")
         print(f"  Accident NS : {accident_detecte_ns.jetons}")
-        print(f"  Accident EW : {accident_detecte_ew.jetons}\n")
+        print(f"  Accident OE : {accident_detecte_oe.jetons}\n")
 
 
 def simuler_tous_les_cas():

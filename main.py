@@ -3,9 +3,9 @@ from utils import simuler_accident
 
 if __name__ == "__main__":
     # Exécuter les scénarios dans le terminal
-    #simuler_tous_les_cas()
+    simuler_tous_les_cas()
 
-    simuler_accident()
+    #simuler_accident()
 
 
     # Ajouter ici l'appel à votre interface graphique
