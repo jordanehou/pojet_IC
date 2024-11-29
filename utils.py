@@ -47,7 +47,7 @@ def simuler_reseau_petri(etapes):
                     break  # Une seule transition par étape
         # mise a 1 du jeton du feu rouge de la direction NS
         remise_a_1()
-        # Afficher l'état actuel des places
+        # Afficher l'état actuel des places 
         print(f"  {rouge_ns}\n  {vert_ns}\n  {jaune_ns}")
         print(f"  {rouge_oe}\n  {vert_oe}\n  {jaune_oe}")
         print(f"  Trafic intense : {trafic_intense.jetons}")
